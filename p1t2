@@ -18,7 +18,6 @@ for i, v in pairs(game:GetService("Workspace").TrialParts.Trial2.UsedCrates:GetD
         else
             if (Char - v.Position).Magnitude < (ClosestPart.Position - Char).Magnitude then
                 ClosestPart = v
-                print(ClosestPart)
             end
         end
     end
