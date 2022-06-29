@@ -18,6 +18,7 @@ end
 
 while wait(0.1) do
     if shared.p1t1 == false then return end
+    
     for i,v in pairs(game:GetService("Workspace").TrialParts.Trial1.Rooms[tostring(ClosestPart.Parent)]:GetDescendants()) do
         if v:IsA("ClickDetector") then
             fireclickdetector(v)
