@@ -1,0 +1,38 @@
+local ClosestPart
+local Char = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+local val = 0 
+
+pcall(function()
+    for i, v in pairs(game:GetService("Workspace").TrialParts.Trial2.UsedCrates:GetDescendants()) do
+        if v.Name == "Crate" then
+            val = val + 1
+            v.Name = "Used" .. val
+        end
+    end
+end)
+
+for i, v in pairs(game:GetService("Workspace").TrialParts.Trial2.UsedCrates:GetDescendants()) do
+    if v.Name == "Button" then
+        if ClosestPart == nil then
+            ClosestPart = v
+        else
+            if (Char - v.Position).Magnitude < (ClosestPart.Position - Char).Magnitude then
+                ClosestPart = v
+                print(ClosestPart)
+            end
+        end
+    end
+end
+
+for i,v in pairs(game:GetService("Workspace").TrialParts.Trial2.UsedCrates[tostring(ClosestPart.Parent.Parent.Parent)]:GetDescendants()) do
+    if v:IsA("ClickDetector") then
+        fireclickdetector(v)
+    end
+end
+
+wait(1)
+for i,v in pairs(game:GetService("Workspace").TrialParts.Trial2.Chambers:GetDescendants()) do
+    if v:IsA("ClickDetector") then
+        fireclickdetector(v)
+    end
+end
