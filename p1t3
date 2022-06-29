@@ -1,6 +1,7 @@
 local p1 = game.Players.LocalPlayer.PlayerGui.Trial3Remote.ImageLabel.DisplayFrame.TextLabel
 local VIM = game:GetService("VirtualInputManager")
 local Key = Enum.KeyCode
+local val = 0
 
 local function press(key)
     VIM:SendKeyEvent(true, key, false, game)
@@ -10,22 +11,40 @@ end
 
 local function call()
     wait(0.5)
+    val = val + 1
+    
+    spawn(function()
+        local a = val
+        wait(1)
+        if a == val then
+            call()
+        end
+    end)
+    
     if p1.Text == "1" then
         press(Key.One)
+        check("1")
     elseif p1.Text == "2" then
         press(Key.Two)
+        check("2")
     elseif p1.Text == "3" then
         press(Key.Three)
+        check("3")
     elseif p1.Text == "4" then
         press(Key.Four)
+        check("4")
     elseif p1.Text == "5" then
         press(Key.Five)
+        check("5")
     elseif p1.Text == "6" then
         press(Key.Six)
+        check("6")
     elseif p1.Text == "7" then
         press(Key.Seven)
+        check("7")
     elseif p1.Text == "8" then
         press(Key.Eight)
+        check("8")
     end
 end
 
