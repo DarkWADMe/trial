@@ -7,5 +7,9 @@ function check()
     end
 end
 
+pcall(function()
+    check()
+end)
+
 Button:GetPropertyChangedSignal("Visible"):Connect(check)
 -- Trial 5
