@@ -1,7 +1,7 @@
 local Button = game.Players.LocalPlayer.PlayerGui.Trial5.Frame.Button
 
 function check()
-    wait(1)
+    wait(0.6)
     for i,v in pairs(getconnections(Button.MouseButton1Click)) do
         v.Function()
     end
