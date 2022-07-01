@@ -25,11 +25,11 @@ end
 
 for i,v in pairs(game:GetService("Workspace").TrialParts.Trial2.UsedCrates[tostring(ClosestPart.Parent.Parent.Parent)]:GetDescendants()) do
     if v:IsA("ClickDetector") then
+        wait(0.2)
         fireclickdetector(v)
     end
 end
 
-wait(1)
 for i,v in pairs(game:GetService("Workspace").TrialParts.Trial2.Chambers:GetDescendants()) do
     if v:IsA("ClickDetector") then
         fireclickdetector(v)
