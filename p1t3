@@ -15,7 +15,7 @@ local function call()
     
     spawn(function()
         local a = val
-        wait(1)
+        wait(0.7)
         if a == val then
             call()
         end
