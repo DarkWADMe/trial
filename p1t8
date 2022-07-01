@@ -1,8 +1,9 @@
 local slid = game.Players.LocalPlayer.PlayerGui.FinalTrial.ImageLabel.DisplayFrame.Frame
 local Obj = game.Players.LocalPlayer.PlayerGui.FinalTrial.ImageLabel.ButtonsBackground.TextButton
+local choose = math.random(700, 760)
 
 function check()
-    if slid.AbsolutePosition.X > 750 then
+    if slid.AbsolutePosition.X > choose then
         for i,v in pairs(getconnections(Obj.MouseButton1Click)) do
             v.Function()
         end
