@@ -1,0 +1,8 @@
+for i = 1, 300 do
+    wait(0.1)
+    for i, v in pairs(game:GetService("Workspace").Trials.Trial3.Rooms:GetDescendants()) do
+        if v:IsA("ProximityPrompt") then
+            fireproximityprompt(v)
+        end
+    end
+end
