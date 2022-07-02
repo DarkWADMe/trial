@@ -1,0 +1,35 @@
+local light = game:GetService("Workspace").TrialParts.Trial6.DangleLight.LightPart.SpotLight
+local plr = game.Players.LocalPlayer
+local Stand = nil
+local val = 0
+ 
+pcall(function()
+    for i, v in pairs(game:GetService("Workspace").TrialParts.Trial6.Stands:GetDescendants()) do
+        if v.Name == "PersonAttached" then
+            if v.Value == plr.Name then
+                Stand = tostring(v.Parent.Parent)
+            end
+        end
+    end
+end)
+
+function check()
+    if light.Brightness == 2.5 or light.Brightness == 0.5 or light.Brightness == 2.0 or light.Brightness == 0 then
+        val = val + 1 
+        if val > 8 then
+            val = -100
+            fireclickdetector(game:GetService("Workspace").TrialParts.Trial6.Stands[Stand].Switch.ClickPart.ClickDetector)
+        end
+    end
+end
+
+function enable()
+    wait(0.1)
+    if light.Enabled == true then
+        val = 0
+        fireclickdetector(game:GetService("Workspace").TrialParts.Trial6.Stands[Stand].Switch.ClickPart.ClickDetector)
+    end
+end
+
+light:GetPropertyChangedSignal("Brightness"):Connect(check)
+light:GetPropertyChangedSignal("Enabled"):Connect(enable)
