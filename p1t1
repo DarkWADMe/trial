@@ -14,7 +14,7 @@ for i, v in pairs(game:GetService("Workspace").TrialParts.Trial1.Rooms:GetDescen
 end
 
 while wait(0.4) do
-    if shared.p1t1 == false then return end
+    if shared.p1t1 == false then break end
     
     for i,v in pairs(game:GetService("Workspace").TrialParts.Trial1.Rooms[tostring(ClosestPart.Parent)]:GetDescendants()) do
         if v:IsA("ClickDetector") then
