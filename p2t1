@@ -10,7 +10,7 @@ pcall(function()
 end)
 
 for i = 1, 100 do
-    wait(0.5)
+    wait(0.4)
     game.Workspace.Trials.Trial1.Movers[tostring(Mover)].Main.RemoteEvent:FireServer(false)
 end
 
