@@ -5,13 +5,12 @@ pcall(function()
     for i, v in pairs(game:GetService("Workspace").Trials.Trial1.Movers:GetDescendants()) do
         if v:IsA("StringValue") and v.Value == game.Players.LocalPlayer.Name then
             Mover = v.Parent.Parent
-            print(Mover)
         end
     end
 end)
 
-for i = 1, 150 do
-    wait(0.35)
+for i = 1, 100 do
+    wait(0.5)
     game.Workspace.Trials.Trial1.Movers[tostring(Mover)].Main.RemoteEvent:FireServer(false)
 end
 
