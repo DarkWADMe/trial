@@ -9,7 +9,7 @@ pcall(function()
     end
 end)
 
-for i = 1, 100 do
+for i = 1, 130 do
     task.wait(0.43)
     game.Workspace.Trials.Trial1.Movers[tostring(Mover)].Main.RemoteEvent:FireServer(false)
 end
