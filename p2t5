@@ -1,0 +1,9 @@
+pcall(function())
+local ButtonPath = game.Players.LocalPlayer.PlayerGui.Trial4Gui.MainFrame
+
+  for i, v in pairs(ButtonPath:GetDescendants()) do
+    if v.Name == "FireFlame" then
+        v:Destroy()
+    end 
+  end
+end)
