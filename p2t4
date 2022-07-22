@@ -1,15 +1,16 @@
 local ButtonPath = game.Players.LocalPlayer.PlayerGui.Trial4Gui.MainFrame
-shared.toggle = false
+shared.toggle1 = false
 
-if shared.toggled == true then
-    game:GetService("ReplicatedStorage").Trial4Gui:FireServer()
+if shared.toggled == false then
+	pcall(function()
+		for i, v in pairs(ButtonPath:GetDescendants()) do
+			if v.Name == "FireFlame" then
+				shared.toggle1 = true
+				v:Destroy()
+			end 
+		end
+	end)
+elseif shared.toggle1 == true then
+	game:GetService("ReplicatedStorage").Trial4Gui:FireServer()
+	shared.toggle1 = false
 end
-
-pcall(function()
-    for i, v in pairs(ButtonPath:GetDescendants()) do
-        if v.Name == "FireFlame" then
-            shared.toggle = true
-            v:Destroy()
-        end 
-    end
-end)
